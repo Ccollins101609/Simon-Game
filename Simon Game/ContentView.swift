@@ -38,6 +38,17 @@ struct ContentView: View {
                     .background(.red)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }
+            
+            Button {
+                print("Blue button pressed")
+            } label: {
+                Text("Blue")
+                    .font(.headline)
+                    .foregroundStyle(.black)
+                    .frame(width: 120, height: 120)
+                    .background(.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
 
 
             Button("Start Game") {
