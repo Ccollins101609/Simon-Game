@@ -50,6 +50,16 @@ struct ContentView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }
 
+            Button {
+                print("Yellow button pressed")
+            } label: {
+                Text("Yellow")
+                    .font(.headline)
+                    .foregroundStyle(.black)
+                    .frame(width: 120, height: 120)
+                    .background(.yellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
 
             Button("Start Game") {
                 print("Game started")
