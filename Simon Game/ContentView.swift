@@ -9,24 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            VStack(spacing: 20) {
-                Text("Simon")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                Text("Press Start to play")
-                    .foregroundStyle(.secondary)
-                
-                Button("Start Game") {
-                    print("Game started")
-                }
+        VStack(spacing: 20) {
+            Text("Simon")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+
+            Text("Watch the pattern")
+                .foregroundStyle(.secondary)
+
+            Button {
+                print("Green button pressed")
+            } label: {
+                Text("Green")
+                    .font(.headline)
+                    .foregroundStyle(.black)
+                    .frame(width: 120, height: 120)
+                    .background(.green)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-            .padding()
+
+            Button("Start Game") {
+                print("Game started")
+            }
         }
+        .padding()
     }
 }
 
-    #Preview {
-        ContentView()
-    }
+#Preview {
+    ContentView()
+}
