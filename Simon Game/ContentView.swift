@@ -13,14 +13,15 @@ struct ContentView: View {
             Text("Simon")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            
+
+            Text("Round 1")
+                .font(.title3)
+
             Text("Watch the pattern")
                 .foregroundStyle(.secondary)
-            
+
             VStack(spacing: 12) {
-                
                 HStack(spacing: 12) {
-                    // Green
                     Button {
                         print("Green button pressed")
                     } label: {
@@ -31,8 +32,7 @@ struct ContentView: View {
                             .background(.green)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
-                    
-                    // Red
+
                     Button {
                         print("Red button pressed")
                     } label: {
@@ -44,9 +44,8 @@ struct ContentView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
                 }
-                
+
                 HStack(spacing: 12) {
-                    // Yellow
                     Button {
                         print("Yellow button pressed")
                     } label: {
@@ -57,8 +56,7 @@ struct ContentView: View {
                             .background(.yellow)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
-                    
-                    // Blue
+
                     Button {
                         print("Blue button pressed")
                     } label: {
@@ -71,15 +69,16 @@ struct ContentView: View {
                     }
                 }
             }
-            
+
             Button("Start Game") {
                 print("Game started")
             }
+            .buttonStyle(.borderedProminent)
         }
         .padding()
     }
 }
-    
-    #Preview {
-        ContentView()
-    }
+
+#Preview {
+    ContentView()
+}
