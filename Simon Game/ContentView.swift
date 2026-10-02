@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var sequence: [Int] = [0]
+
     var body: some View {
         VStack(spacing: 20) {
             Text("Simon")
