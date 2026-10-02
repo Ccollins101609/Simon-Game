@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var sequence: [Int] = [0]
+    @State private var currentColor = "None"
 
     var body: some View {
         VStack(spacing: 20) {
@@ -19,8 +20,12 @@ struct ContentView: View {
             Text("Round 1")
                 .font(.title3)
 
-            Text("Watch the pattern")
+            Text("Simon chose:")
                 .foregroundStyle(.secondary)
+
+            Text(currentColor)
+                .font(.title2)
+                .fontWeight(.bold)
 
             VStack(spacing: 12) {
                 HStack(spacing: 12) {
@@ -73,7 +78,21 @@ struct ContentView: View {
             }
 
             Button("Start Game") {
-                print("Game started")
+                let newColor = Int.random(in: 0...3)
+                sequence.append(newColor)
+
+                switch newColor {
+                case 0:
+                    currentColor = "Green"
+                case 1:
+                    currentColor = "Red"
+                case 2:
+                    currentColor = "Yellow"
+                case 3:
+                    currentColor = "Blue"
+                default:
+                    currentColor = "None"
+                }
             }
             .buttonStyle(.borderedProminent)
         }
