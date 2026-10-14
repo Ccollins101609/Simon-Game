@@ -9,42 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 24) {
             Text("SIMON")
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
             Text("Remember the pattern!")
                 .font(.headline)
-            Button(action: {}) {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(.green)
-                    .frame(width: 140, height: 140)
+
+            VStack(spacing: 12) {
+                HStack(spacing: 12) {
+                    colorButton(.green)
+                    colorButton(.red)
+                }
+
+                HStack(spacing: 12) {
+                    colorButton(.yellow)
+                    colorButton(.blue)
+                }
             }
-            .buttonStyle(.plain)
-            
-            Button(action: {}) {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(.red)
-                    .frame(width: 140, height: 140)
-            }
-            .buttonStyle(.plain)
-            
-            Button(action: {}) {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(.yellow)
-                    .frame(width: 140, height: 140)
-            }
-            .buttonStyle(.plain)
-            
-            Button(action: {}) {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(.blue)
-                    .frame(width: 140, height: 140)
-            }
-            .buttonStyle(.plain)
         }
         .padding()
+    }
+
+    func colorButton(_ color: Color) -> some View {
+        Button(action: {}) {
+            RoundedRectangle(cornerRadius: 20)
+                .fill(color)
+                .frame(width: 140, height: 140)
+        }
+        .buttonStyle(.plain)
     }
 }
 
