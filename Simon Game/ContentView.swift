@@ -5,9 +5,12 @@
 //  Created by Christian Collins on 10/13/26.
 //
 
+
 import SwiftUI
 
 struct ContentView: View {
+    @State private var playerInput: [Int] = []
+
     var body: some View {
         VStack(spacing: 24) {
             Text("SIMON")
@@ -17,23 +20,34 @@ struct ContentView: View {
             Text("Remember the pattern!")
                 .font(.headline)
 
+            Text("Buttons pressed: \(playerInput.count)")
+                .font(.subheadline)
+
             VStack(spacing: 12) {
                 HStack(spacing: 12) {
-                    colorButton(.green)
-                    colorButton(.red)
+                    colorButton(0, .green)
+                    colorButton(1, .red)
                 }
 
                 HStack(spacing: 12) {
-                    colorButton(.yellow)
-                    colorButton(.blue)
+                    colorButton(2, .yellow)
+                    colorButton(3, .blue)
                 }
             }
+
+            Button("Clear Presses") {
+                playerInput = []
+            }
+            .buttonStyle(.borderedProminent)
         }
         .padding()
     }
 
-    func colorButton(_ color: Color) -> some View {
-        Button(action: {}) {
+    func colorButton(_ number: Int, _ color: Color) -> some View {
+        Button {
+            playerInput.append(number)
+            print("Pressed color:", number)
+        } label: {
             RoundedRectangle(cornerRadius: 20)
                 .fill(color)
                 .frame(width: 140, height: 140)
