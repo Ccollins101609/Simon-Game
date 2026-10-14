@@ -7,6 +7,7 @@
 
 
 
+
 import SwiftUI
 
 struct ContentView: View {
@@ -17,53 +18,47 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 24) {
             Text("SIMON")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+                .font(.largeTitle.bold())
 
             Text("Remember the pattern!")
-                .font(.headline)
-
             Text("Buttons pressed: \(playerInput.count)")
-                .font(.subheadline)
+            Text("Sequence: \(sequence.map { colorName($0) }.joined(separator: ", "))")
 
-            Text("Sequence length: \(sequence.count)")
-                .font(.subheadline)
-
-            VStack(spacing: 12) {
-                HStack(spacing: 12) {
-                    colorButton(0, .green)
-                    colorButton(1, .red)
-                }
-
-                HStack(spacing: 12) {
-                    colorButton(2, .yellow)
-                    colorButton(3, .blue)
-                }
-            }
+            colorGrid
 
             Button("Start Game") {
-                sequence = [Int.random(in: 0...3)]
                 playerInput = []
+                sequence = [Int.random(in: 0...3)]
                 gameStarted = true
-
-                print("Starting sequence:", sequence)
             }
             .buttonStyle(.borderedProminent)
 
-            Button("Clear Presses") {
-                playerInput = []
+            Button("Add Random Color") {
+                guard gameStarted else { return }
+                sequence.append(Int.random(in: 0...3))
             }
             .buttonStyle(.bordered)
         }
         .padding()
     }
 
+    var colorGrid: some View {
+        VStack(spacing: 12) {
+            HStack(spacing: 12) {
+                colorButton(0, .green)
+                colorButton(1, .red)
+            }
+            HStack(spacing: 12) {
+                colorButton(2, .yellow)
+                colorButton(3, .blue)
+            }
+        }
+    }
+
     func colorButton(_ number: Int, _ color: Color) -> some View {
         Button {
             guard gameStarted else { return }
-
             playerInput.append(number)
-            print("Pressed color:", number)
         } label: {
             RoundedRectangle(cornerRadius: 20)
                 .fill(color)
@@ -71,8 +66,18 @@ struct ContentView: View {
         }
         .buttonStyle(.plain)
     }
+
+    func colorName(_ number: Int) -> String {
+        switch number {
+        case 0: return "Green"
+        case 1: return "Red"
+        case 2: return "Yellow"
+        default: return "Blue"
+        }
+    }
 }
 
 #Preview {
     ContentView()
 }
+
