@@ -16,6 +16,12 @@ struct ContentView: View {
 
             Text("Remember the pattern!")
                 .font(.headline)
+            Button(action: {}) {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.green)
+                    .frame(width: 140, height: 140)
+            }
+            .buttonStyle(.plain)
         }
         .padding()
     }
