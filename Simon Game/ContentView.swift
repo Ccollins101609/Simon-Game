@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var playerInput: [Int] = []
+    @State private var sequence: [Int] = []
 
     var body: some View {
         VStack(spacing: 24) {
@@ -21,6 +22,9 @@ struct ContentView: View {
                 .font(.headline)
 
             Text("Buttons pressed: \(playerInput.count)")
+                .font(.subheadline)
+           
+            Text("Sequence length: \(sequence.count)")
                 .font(.subheadline)
 
             VStack(spacing: 12) {
