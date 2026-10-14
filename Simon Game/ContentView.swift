@@ -9,6 +9,7 @@
 
 
 
+
 import SwiftUI
 
 struct ContentView: View {
@@ -31,7 +32,11 @@ struct ContentView: View {
             colorGrid
 
             Button("Start Game") {
-                startGame()
+                sequence = [Int.random(in: 0...3)]
+                playerInput = []
+                gameStarted = true
+                message = "Watch the pattern!"
+                playSequence()
             }
             .buttonStyle(.borderedProminent)
         }
@@ -54,14 +59,24 @@ struct ContentView: View {
     func colorButton(_ number: Int, _ color: Color) -> some View {
         Button {
             guard gameStarted && !showingSequence else { return }
+            let index = playerInput.count
+
+            guard index < sequence.count else { return }
             playerInput.append(number)
 
-            let index = playerInput.count - 1
-            if playerInput[index] != sequence[index] {
-                message = "Wrong pattern! Try again."
+            if sequence[index] != number {
+                message = "Game over!"
                 gameStarted = false
             } else if playerInput.count == sequence.count {
-                message = "Correct! Next round soon."
+                gameStarted = false
+                message = "Correct! Next round..."
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    sequence.append(Int.random(in: 0...3))
+                    playerInput = []
+                    gameStarted = true
+                    message = "Watch the pattern!"
+                    playSequence()
+                }
             }
         } label: {
             RoundedRectangle(cornerRadius: 20)
@@ -69,14 +84,6 @@ struct ContentView: View {
                 .frame(width: 140, height: 140)
         }
         .buttonStyle(.plain)
-    }
-
-    func startGame() {
-        sequence = [Int.random(in: 0...3)]
-        playerInput = []
-        gameStarted = true
-        message = "Watch the pattern!"
-        playSequence()
     }
 
     func playSequence() {
@@ -99,6 +106,7 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
 
 
 
