@@ -6,11 +6,13 @@
 //
 
 
+
 import SwiftUI
 
 struct ContentView: View {
     @State private var playerInput: [Int] = []
     @State private var sequence: [Int] = []
+    @State private var gameStarted = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -23,7 +25,7 @@ struct ContentView: View {
 
             Text("Buttons pressed: \(playerInput.count)")
                 .font(.subheadline)
-           
+
             Text("Sequence length: \(sequence.count)")
                 .font(.subheadline)
 
@@ -39,16 +41,27 @@ struct ContentView: View {
                 }
             }
 
+            Button("Start Game") {
+                sequence = [Int.random(in: 0...3)]
+                playerInput = []
+                gameStarted = true
+
+                print("Starting sequence:", sequence)
+            }
+            .buttonStyle(.borderedProminent)
+
             Button("Clear Presses") {
                 playerInput = []
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.bordered)
         }
         .padding()
     }
 
     func colorButton(_ number: Int, _ color: Color) -> some View {
         Button {
+            guard gameStarted else { return }
+
             playerInput.append(number)
             print("Pressed color:", number)
         } label: {
