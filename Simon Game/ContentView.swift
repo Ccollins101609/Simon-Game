@@ -22,6 +22,13 @@ struct ContentView: View {
                     .frame(width: 140, height: 140)
             }
             .buttonStyle(.plain)
+            
+            Button(action: {}) {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.red)
+                    .frame(width: 140, height: 140)
+            }
+            .buttonStyle(.plain)
         }
         .padding()
     }
