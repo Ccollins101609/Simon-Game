@@ -6,8 +6,25 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8CFE50C5307FDBF4004AF31F /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50C0307FDBF4004AF31F /* 2.wav */; };
+		8CFE50C6307FDBF4004AF31F /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50C1307FDBF4004AF31F /* 3.wav */; };
+		8CFE50C7307FDBF4004AF31F /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50BE307FDBF4004AF31F /* 0.wav */; };
+		8CFE50C8307FDBF4004AF31F /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50BF307FDBF4004AF31F /* 1.wav */; };
+		8CFE50C9307FDBF4004AF31F /* HighScore.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50C2307FDBF4004AF31F /* HighScore.wav */; };
+		8CFE50CA307FDBF4004AF31F /* Lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50C3307FDBF4004AF31F /* Lose.wav */; };
+		8CFE50CB307FDBF4004AF31F /* Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8CFE50C4307FDBF4004AF31F /* Start.wav */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8CFE50B0307F37FE004AF31F /* Simon Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simon Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CFE50BE307FDBF4004AF31F /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
+		8CFE50BF307FDBF4004AF31F /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		8CFE50C0307FDBF4004AF31F /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		8CFE50C1307FDBF4004AF31F /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
+		8CFE50C2307FDBF4004AF31F /* HighScore.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HighScore.wav; sourceTree = "<group>"; };
+		8CFE50C3307FDBF4004AF31F /* Lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Lose.wav; sourceTree = "<group>"; };
+		8CFE50C4307FDBF4004AF31F /* Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Start.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -30,6 +47,13 @@
 		8CFE50A7307F37FE004AF31F = {
 			isa = PBXGroup;
 			children = (
+				8CFE50BE307FDBF4004AF31F /* 0.wav */,
+				8CFE50BF307FDBF4004AF31F /* 1.wav */,
+				8CFE50C0307FDBF4004AF31F /* 2.wav */,
+				8CFE50C1307FDBF4004AF31F /* 3.wav */,
+				8CFE50C2307FDBF4004AF31F /* HighScore.wav */,
+				8CFE50C3307FDBF4004AF31F /* Lose.wav */,
+				8CFE50C4307FDBF4004AF31F /* Start.wav */,
 				8CFE50B2307F37FE004AF31F /* Simon Game */,
 				8CFE50B1307F37FE004AF31F /* Products */,
 			);
@@ -102,6 +126,13 @@
 		8CFE50AE307F37FE004AF31F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				8CFE50C5307FDBF4004AF31F /* 2.wav in Resources */,
+				8CFE50C6307FDBF4004AF31F /* 3.wav in Resources */,
+				8CFE50C7307FDBF4004AF31F /* 0.wav in Resources */,
+				8CFE50C8307FDBF4004AF31F /* 1.wav in Resources */,
+				8CFE50C9307FDBF4004AF31F /* HighScore.wav in Resources */,
+				8CFE50CA307FDBF4004AF31F /* Lose.wav in Resources */,
+				8CFE50CB307FDBF4004AF31F /* Start.wav in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
